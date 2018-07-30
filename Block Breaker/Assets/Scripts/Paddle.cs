@@ -20,7 +20,7 @@ public class Paddle : MonoBehaviour {
 		Debug.Log(mouseXPos);
 		//new vector that makes paddle where mouse x is
 		Vector2 paddlePos = new Vector2(transform.position.x , transform.position.y);
-		paddlePos.x = Mathf.Clamp(mouseXPos, min, max);
+		paddlePos.x = Mathf.Clamp(mouseXPos - 2, min, max);
 		paddlePos.y = -6.25f;
 
 
