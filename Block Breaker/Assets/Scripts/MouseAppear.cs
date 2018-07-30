@@ -6,10 +6,10 @@ public class MouseAppear : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-        //make cursor visible
-        Cursor.visible = true;
+		//make cursor visible
+		Cursor.visible = true;
 
-    }
+	}
 	
 	// Update is called once per frame
 	void Update () {
