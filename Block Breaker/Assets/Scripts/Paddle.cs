@@ -10,17 +10,20 @@ public class Paddle : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		
+		//make cursor invisible
+		Cursor.visible = false;
+
 	}
 	
 	// Update is called once per frame
 	void Update () {
 		//Getting mouse position as a amount in screen units
 		float mouseXPos = Input.mousePosition.x / Screen.width * screenWidthInUnits;
-		Debug.Log(mouseXPos);
+		//Debug.Log(mouseXPos);
+		//Debug.Log(Input.mousePosition.x);
 		//new vector that makes paddle where mouse x is
 		Vector2 paddlePos = new Vector2(transform.position.x , transform.position.y);
-		paddlePos.x = Mathf.Clamp(mouseXPos - 2, min, max);
+		paddlePos.x = Mathf.Clamp(mouseXPos - 3.3f, min, max);
 		paddlePos.y = -6.25f;
 
 
