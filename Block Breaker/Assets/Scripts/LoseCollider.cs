@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 
 public class LoseCollider : MonoBehaviour {
-
+    //gameover when ball drops past paddle
     private void OnTriggerEnter2D(Collider2D collision)
     {
 

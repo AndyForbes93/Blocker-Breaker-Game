@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class SceneLoader : MonoBehaviour {
-
+    //move onto next level 
     public void LoadNextScene()
     {
         int currSceneIndex = SceneManager.GetActiveScene().buildIndex;
