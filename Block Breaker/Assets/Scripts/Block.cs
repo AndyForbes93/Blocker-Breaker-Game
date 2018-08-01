@@ -6,13 +6,15 @@ public class Block : MonoBehaviour {
 
     [SerializeField] AudioClip blockSound;
 
-    //cached refernce
-    Level level;
+    //cached reference
+    LevelAgain level;
+   // GameStatus gameStatus;
 
-    //on start call COuntBreakableBlocks metjod from Level class
-    private void Start()
+    //on start call COuntBreakableBlocks method from Level class
+     void Start()
     {
-       level = FindObjectOfType<Level>();
+      
+       level = FindObjectOfType<LevelAgain>();
        level.CountBreakableBlocks();
 
         
@@ -21,9 +23,9 @@ public class Block : MonoBehaviour {
     //destroys block and play souns on collision
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        //level.CountBreakableBlocks();
-
+        FindObjectOfType<GameStatus>().AddToScore();
         AudioSource.PlayClipAtPoint(blockSound , Camera.main.transform.position);
         Destroy(gameObject, .1f);
+        level.BlockDestroyed();
     }
 }
