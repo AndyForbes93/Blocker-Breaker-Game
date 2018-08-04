@@ -24,8 +24,8 @@ GameObject:
   - component: {fileID: 114113324988553810}
   - component: {fileID: 82473404475396374}
   m_Layer: 0
-  m_Name: Block Square
-  m_TagString: Untagged
+  m_Name: Unbreakable Block
+  m_TagString: Unbreakable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -175,6 +175,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blockSound: {fileID: 8300000, guid: 5fc610f2e07c5b84491f6dd5c250e830, type: 3}
+  blockParticleVFX: {fileID: 100000, guid: 7d846c02296ef4dc4abff04ce3e5262c, type: 2}
 --- !u!212 &212097168877274656
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -211,7 +212,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: 59d42650d584a9a408b515a22fcccfc5, type: 3}
-  m_Color: {r: 0.9528302, g: 0.73975563, b: 0.373042, a: 1}
+  m_Color: {r: 0.34117648, g: 0.36078432, b: 0.37254903, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0

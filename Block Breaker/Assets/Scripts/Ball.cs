@@ -3,56 +3,56 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Ball : MonoBehaviour {
-	//config params
-	[SerializeField] Paddle paddle1;
-	[SerializeField] float xPush = 2f;
-	[SerializeField] float yPush = 15f;
+    //config params
+    [SerializeField] Paddle paddle1;
+    [SerializeField] float xPush = 2f;
+    [SerializeField] float yPush = 15f;
     [SerializeField] AudioClip[] ballSounds;
 
 
-	//state
-	Vector2 paddleToBallVector;
-	bool hasStarted = false;
+    //state
+    Vector2 paddleToBallVector;
+    bool hasStarted = false;
 
     //Cached component refernces
     AudioSource myAudioSource;
 
-	// Use this for initialization
-	void Start () {
-		paddleToBallVector = transform.position - paddle1.transform.position;
+    // Use this for initialization
+    void Start () {
+        paddleToBallVector = transform.position - paddle1.transform.position;
         myAudioSource = GetComponent<AudioSource>();
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		LockBallToPaddle();
-		LaunchOnMouseClick();
-		
-		
-	}
+        
+    }
+    
+    // Update is called once per frame
+    void Update () {
+        LockBallToPaddle();
+        LaunchOnMouseClick();
+        
+        
+    }
     //starts ball on top of paddle at start of level
-	private void LockBallToPaddle()
-	{
-		if (!hasStarted) {
-			Vector2 paddlePos = new Vector2(paddle1.transform.position.x, paddle1.transform.position.y);
-			transform.position = paddlePos + paddleToBallVector;
-		}
-	   
+    private void LockBallToPaddle()
+    {
+        if (!hasStarted) {
+            Vector2 paddlePos = new Vector2(paddle1.transform.position.x, paddle1.transform.position.y);
+            transform.position = paddlePos + paddleToBallVector;
+        }
+       
 
-	}
+    }
     //fire ball when mouse clicked
-	private void LaunchOnMouseClick()
-	{
-		if (Input.GetMouseButtonDown(0) && !hasStarted)
-		{
-			hasStarted = true;
-			GetComponent<Rigidbody2D>().velocity = new Vector2(xPush , yPush);
-		}
-	}
+    private void LaunchOnMouseClick()
+    {
+        if (Input.GetMouseButtonDown(0) && !hasStarted)
+        {
+            hasStarted = true;
+            GetComponent<Rigidbody2D>().velocity = new Vector2(xPush , yPush);
+        }
+    }
     //plays audio file on collision
-	private void OnCollisionEnter2D(Collision2D collision)
-	{
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
 
         if (hasStarted)
         {
@@ -60,5 +60,5 @@ public class Ball : MonoBehaviour {
             myAudioSource.PlayOneShot(clip);
         }
         
-	}
+    }
 }
